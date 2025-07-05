@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lana Coffee Roasters - Surga Pecinta Kopi</title>
+    <meta name="description" content="Lana Coffee Roasters adalah surga bagi pecinta kopi. Nikmati kopi spesialitas, hidangan Italia & Amerika, serta suasana yang nyaman dan staf yang ramah.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+        /* === GLOBAL STYLES === */
+        :root {
+            --primary-color: #6F4E37; /* Coffee Brown */
+            --secondary-color: #F5F5DC; /* Beige/Cream */
+            --accent-color: #D2691E; /* Chocolate Orange */
+            --text-color: #333;
+            --white-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; text-align: center; }
+        h3 { font-size: 1.5rem; }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--accent-color);
+            color: var(--white-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+        }
+
+        /* === HEADER & NAVIGATION === */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 5%;
+        }
+
+        .navbar .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=1740&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            color: var(--white-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* === ABOUT SECTION === */
+        #about {
+            background: var(--white-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-content img {
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .about-content .text {
+            width: 55%;
+        }
+        
+        .about-content .text p {
+            margin-bottom: 15px;
+        }
+
+        /* === OFFERINGS SECTION === */
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .offering-card {
+            background: var(--white-color);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .offering-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+        }
+
+        .offering-card .icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        /* === GALLERY SECTION === */
+        #gallery {
+            background: var(--white-color);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        
+        /* === TESTIMONIALS SECTION === */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* === LOCATION SECTION === */
+        #location {
+            background: var(--white-color);
+            text-align: center;
+        }
+        
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            text-align: left;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .location-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .location-info i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .social-media a {
+            color: var(--white-color);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: var(--accent-color);
+        }
+        
+        footer p {
+            margin-top: 20px;
+        }
+        
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .navbar { flex-direction: column; gap: 10px; }
+            
+            .about-content { flex-direction: column; }
+            .about-content img, .about-content .text { width: 100%; }
+
+            .offerings-grid { grid-template-columns: 1fr; }
+            
+            .location-content { grid-template-columns: 1fr; }
+            .map-container { order: -1; } /* Map on top */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <a href="#" class="logo">Lana Coffee Roasters</a>
+        <nav>
+            <ul>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#offerings">Layanan</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Selamat Datang di Surga Pecinta Kopi</h1>
+                <p>Temukan perpaduan sempurna antara biji kopi pilihan, hidangan lezat, dan suasana yang akan membuat Anda betah.</p>
+                <a href="#offerings" class="btn">Lihat Menu Kami</a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="container">
+                <div class="about-content">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=1740&auto=format&fit=crop" alt="Interior kafe yang nyaman">
+                    <div class="text">
+                        <h2>Dimana Aroma Kopi Bertemu Kenyamanan.</h2>
+                        <p><a href="http://lanacoffee.plasmic.site/" target="_blank">	<strong>Lana Coffee Roasters</strong></a> lahir dari hasrat untuk menyajikan kopi terbaik. Kami menyangrai biji kopi kami sendiri untuk memastikan setiap cangkir yang Anda nikmati memiliki kualitas dan kesegaran maksimal.</p>
+                        <p>Bagi kami, kedai kopi lebih dari sekadar tempat. Ini adalah rumah kedua, sebuah surga di mana Anda bisa bersantai, bekerja, atau bercengkrama. Dengan staf kami yang ramah dan atmosfer yang hangat, kami berkomitmen untuk memberikan pengalaman yang tak terlupakan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFERINGS SECTION -->
+        <section id="offerings">
+            <div class="container">
+                <h2>Apa yang Kami Tawarkan?</h2>
+                <div class="offerings-grid">
+                    <div class="offering-card">
+                        <div class="icon"><i class="fas fa-coffee"></i></div>
+                        <h3>Kopi Spesialitas</h3>
+                        <p>Dari espresso yang kuat hingga manual brew yang lembut, nikmati biji kopi pilihan dari seluruh dunia yang kami sangrai dengan teliti.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div class="icon"><i class="fas fa-utensils"></i></div>
+                        <h3>Hidangan Italia & Amerika</h3>
+                        <p>Lengkapi kopi Anda dengan menu lezat kami, mulai dari pasta otentik, pizza renyah, hingga burger dan sandwich yang memuaskan.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div class="icon"><i class="fas fa-couch"></i></div>
+                        <h3>Suasana & Komunitas</h3>
+                        <p>Kami bangga dengan suasana kami yang nyaman dan staf yang ramah. Tempat yang sempurna untuk bekerja, bertemu teman, atau sekadar menikmati waktu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Galeri Suasana Kami</h2>
+                 <div class="gallery-grid">
+                    <!-- Ganti 'src' dengan URL gambar Anda -->
+                    <img src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/11a0fbef-8b40-48d9-91bf-bf076e684cae_Go-Biz_20240110_152259.jpeg?auto=format" alt="Latte Art di atas meja kayu">
+                    <img src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/388e41b4-cc1f-4039-b542-b6f7e69e33e8_Go-Biz_20220216_173840.jpeg?auto=format" alt="Sudut kafe yang cozy dengan sofa">
+                    <img src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/d4b9f539-bf57-47cc-9048-36aff8dd1d62_Go-Biz_20230312_204127.jpeg?auto=format" alt="Aneka makanan dan kopi di meja">
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials">
+            <div class="container">
+                <h2>Kata Mereka Tentang Kami</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Kopinya benar-benar juara! Rasanya beda dari yang lain. Tempatnya juga nyaman banget buat kerja atau sekadar baca buku. Pasti balik lagi!"</p>
+                        <div class="author">- Andini, Penikmat Kopi</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Stafnya super ramah dan sangat membantu. Saya coba pastanya dan rasanya otentik. Suasananya hangat, bikin betah berlama-lama di sini."</p>
+                        <div class="author">- Budi, Pengusaha</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Akhirnya nemu tempat nongkrong yang sempurna. Musiknya pas, wifinya kencang, dan yang terpenting, suasananya nyaman. Two thumbs up!"</p>
+                        <div class="author">- Citra, Mahasiswi</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>© 2025 <a href="https://vpsekspor.com/">VpsEkspor</a> Lana Coffee Roasters. ❤️ untuk para pecinta kopi <a href="https://jagoankita.my.id">JagoanKita</a>.</p>
+        </div>
+    </footer>
+<div style="display: none;"> 
+    <a href="http://commonspace.chipandjoannaexposed.com/" target="_blank">commonspace</a>	
+    <a href="http://liminalcoffee.foxie.cool/" target="_blank">liminalcoffee</a>	
+</div>
+</body>
+</html>
